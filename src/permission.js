@@ -13,7 +13,7 @@ router.beforeEach(async (to, from, next) => {
       })
     } else {
       const userInfo = store.getters.userInfo
-      if (JSON.stringify(userInfo) !== '{}') {
+      if (userInfo) {
         next()
       } else {
         try {
