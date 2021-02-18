@@ -3,7 +3,7 @@ import { setToken } from '@/utils/auth'
 import { routes } from '@/router/index'
 
 const state = {
-  userInfo: {},
+  userInfo: '',
   menu: {
     opened: false
   },
