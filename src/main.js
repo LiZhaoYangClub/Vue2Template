@@ -6,7 +6,7 @@ import ElementUI, { Message } from 'element-ui'
 import GLOBAL from '@/utils/global_variable'
 import Fragment from 'vue-fragment'
 import { MyComponent } from './components/index'
-import Draggable from '@/directive/el-drag-dialog'
+import { MyDirective } from './directive'
 import './styles/index.scss'
 import './styles/element-variables.scss'
 import './permission'
@@ -18,31 +18,20 @@ Vue.prototype.$Tip = {
     message: msg,
     type: 'success'
   }),
-  error: error => Message.error(error)
+  error: error => Message.error(error),
+  warn: msg => Message({
+    message: msg,
+    type: 'warning'
+  })
 }
-
-// el-table滚动加载
-Vue.directive('loadmore', {
-  bind(el, binding) {
-    const selectWrap = el.querySelector('.el-table__body-wrapper')
-    selectWrap.addEventListener('scroll', function () {
-      const sign = 0
-      const scrollDistance = this.scrollHeight - this.scrollTop - this.clientHeight
-      if (scrollDistance <= sign) {
-        binding.value()
-      }
-    })
-  }
-})
 
 Vue.config.productionTip = false
 Vue.use(ElementUI, {
   size: 'small'
 })
 Vue.use(MyComponent)
-Vue.use(Draggable)
+Vue.use(MyDirective)
 Vue.use(Fragment.Plugin)
-
 new Vue({
   router,
   store,
