@@ -33,6 +33,11 @@ export const routes = [
         }
       }
     ]
+  },
+  {
+    path: '*',
+    name: 'redirect',
+    redirect: '/'
   }
 ]
 

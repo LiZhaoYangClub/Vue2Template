@@ -33,7 +33,7 @@ input {
     // display: flex;
     height: 56px;
     .svg-icon{
-      font-size: 24px;
+      font-size: 20px;
       vertical-align: middle;
       margin-right: 10px;
     }
@@ -242,4 +242,33 @@ input {
   // box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
   background: transparent;
   border-radius: 8px;
+}
+
+/* breadcrumb transition */
+.breadcrumb-enter-active,
+.breadcrumb-leave-active {
+  transition: all .5s;
+}
+
+.breadcrumb-enter,
+.breadcrumb-leave-active {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.breadcrumb-move {
+  transition: all .5s;
+}
+
+.breadcrumb-leave-active {
+  position: absolute;
+}
+.el-breadcrumb__inner a:hover {
+  color: #409eff !important;
+}
+.el-breadcrumb__inner a{
+  color: #409eff !important;
+}
+.app-breadcrumb.el-breadcrumb{
+  line-height: 60px !important;
 }

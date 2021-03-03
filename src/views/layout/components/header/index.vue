@@ -4,8 +4,9 @@
       Flink实时数仓
     </div>
     <div class="route d-flex pl-3">
-      <SvgIcon :icon-class="currentRoute.meta.icon" style="margin-top: 18px;" />
-      <div class="breadCrumb px-1">{{ currentRoute.meta.title }}</div>
+      <AkBreadcrumb />
+      <!-- <SvgIcon :icon-class="currentRoute.meta.icon" style="margin-top: 18px;" />
+      <div class="breadCrumb px-1">{{ currentRoute.meta.title }}</div> -->
     </div>
     <div class="user pr-2 cursor-pointer">
       <el-dropdown trigger="click">

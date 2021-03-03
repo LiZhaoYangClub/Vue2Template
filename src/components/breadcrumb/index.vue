@@ -14,9 +14,10 @@
 </template>
 
 <script>
-import pathToRegexp from 'path-to-regexp'
+const { compile } = require('path-to-regexp')
 
 export default {
+  name: 'AkBreadcrumb',
   data() {
     return {
       levelList: null
@@ -62,7 +63,8 @@ export default {
     pathCompile(path) {
       // To solve this problem https://github.com/PanJiaChen/vue-element-admin/issues/561
       const { params } = this.$route
-      var toPath = pathToRegexp.compile(path)
+      console.log('>>>', path, params)
+      var toPath = compile(path)
       return toPath(params)
     },
     handleLink(item) {
